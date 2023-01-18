@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "echo 'Building Sanity to public/studio' && cd studio && yarn && npx @sanity/cli build ../public/studio -y && echo 'Done'",
     "build": "next build",
     "start": "next start",
+    "sanity": "cd sanity-project && sanity dev",
     "lint": "next lint"
   },
   "dependencies": {
@@ -16,8 +18,23 @@
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.2",
     "next": "13.1.2",
+    "next-sanity": "^4.0.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "4.9.4"
+    "typescript": "4.9.4",
+    "@babel/core": "^7.17.9",
+    "@sanity/client": "^3.2.0",
+    "@sanity/image-url": "^1.0.1",
+    "@stripe/stripe-js": "^1.25.0",
+    "canvas-confetti": "^1.5.1",
+    "next-sanity-image": "^3.2.1",
+    "react-hot-toast": "^2.2.0",
+    "react-icons": "^4.3.1",
+    "stripe": "^8.209.0"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.16.7",
+    "eslint": "8.13.0",
+    "eslint-config-next": "12.1.4"
   }
 }
