@@ -5,28 +5,30 @@ import { urlFor } from "lib/client";
 import { BannerData } from "types";
 
 interface HeroBannerProps {
-  heroBanner: BannerData | null;
+  heroBanner: BannerData;
 }
 const HeroBanner: React.FC<HeroBannerProps> = ({ heroBanner }) => {
+  const { smallText, midText, largeText1, image, product, buttonText, desc } =
+    heroBanner;
   return (
     <div className="hero-banner-container">
       <div>
-        <p className="beats-solo">{heroBanner?.smallText}</p>
-        <h3>{heroBanner?.midText}</h3>
-        <h1>{heroBanner?.largeText1}</h1>
+        <p className="beats-solo">{smallText}</p>
+        <h3>{midText}</h3>
+        <h1>{largeText1}</h1>
         <img
-          src={urlFor(heroBanner?.image).url()}
+          src={urlFor(image).url()}
           alt="headphones"
           className="hero-banner-image"
         />
 
         <div>
-          <Link href={`/product/${heroBanner?.product}`}>
-            <button type="button">{heroBanner?.buttonText}</button>
+          <Link href={`/product/${product}`}>
+            <button type="button">{buttonText}</button>
           </Link>
           <div className="desc">
             <h5>Description</h5>
-            <p>{heroBanner?.desc}</p>
+            <p>{desc}</p>
           </div>
         </div>
       </div>

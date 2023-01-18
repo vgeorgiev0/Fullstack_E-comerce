@@ -10,7 +10,7 @@ interface HomeProps {
 const Home: React.FC<HomeProps> = ({ bannerData, products }) => {
   return (
     <>
-      <HeroBanner heroBanner={bannerData.length ? bannerData[0] : null} />
+      <HeroBanner heroBanner={bannerData[0]} />
 
       <div className="products-heading">
         <h2>Best Selling Products</h2>
@@ -27,7 +27,7 @@ const Home: React.FC<HomeProps> = ({ bannerData, products }) => {
         ))}
       </div>
 
-      <FooterBanner />
+      <FooterBanner footerBannerData={bannerData[0]} />
     </>
   );
 };
